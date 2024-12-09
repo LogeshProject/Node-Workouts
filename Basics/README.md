@@ -1,11 +1,55 @@
 part:1 =>   Node.js is an open source , cross-platform , javaScript Runtime environment 
 
-modules (user defined) , built-in modules , node internals , npm , cli 
+=> single thread event loop 
+=> event driven 
+=> Non-blocking I/O
+
+
+
+core components : 
+
+1) V8
+2) Event Loop
+3) Libuv 
+4) Modules
+5) Node.js API
+
+
+V8 engine => highly optimized for excuting js code, by using JIT compliation which results execute faster.
 
 
 
 
-part:2 =>   ECMAScript was created a standarize JavaScript. (European Computer Manufacturers Association-ECMA)
+
+libuv :
+    what : open source library, cross platform library written by c 
+    why :  because handle async non-blocking operation in node.js
+    how : Thread pool , Event loop
+
+provides : Event-loop  , async I/O  ,  Thread Pool
+
+
+
+
+
+
+A module is an encapsulated and reusable chunk of code.
+
+1) Local modules
+2) Bulid-in modules
+3) Third-party modules
+
+
+
+
+
+
+
+
+
+
+
+ECMAScript => It  was created a standarize JavaScript. (European Computer Manufacturers Association-ECMA)
 
     ES5 : strictmode , JSON support , array methods.
     ES6 : let/const , arrow function , template literals.
@@ -15,34 +59,8 @@ part:2 =>   ECMAScript was created a standarize JavaScript. (European Computer M
     JavaScript engines (like V8 in Chrome, SpiderMonkey in Firefox, and Chakra in Edge , javaScriptCore in safari) implement ECMAScript specifications, ensuring that JavaScript code behaves consistently across different platforms.
 
 
-part:3 =>   V8 engine => highly optimized for excuting js code, by using JIT compliation which results excute faster.
-
-    Node.js allows run js code outside the browser. It is built using C++ .
-
-    V8 engine also bulit in C++ .
-
-    
-part:4 =>  JavaScript Runtime which provides all the necessary components to run the js program.
-
-    JavaScript engine is a one component in the javaScript Runtime.
 
 
-
-
-
-
-
-
-
-part:5 
-
-What is Node.js ?
-
-    Node internally has a collection of dependencies that used to excute the code . In that , two important dependencies libuv and V8 .
-
-    libuv is used to access the operating system underlying file-system.
-
-    node dependencies , C/C++ features , fs library 
 
 
 
@@ -61,46 +79,13 @@ Excuting the js code in two ways :
 2) Excuting code in js file in command line.
 
 
-part : 8 
-
-Modules:
-
-    A module is an encapsulated and reusable chunk of code.
-
-Types of modules: 
-         
-1) Local modules
-2) Bulid-in modules
-3) Third-party modules
-
-Local Modules :
-
-    common JS : standard that states how a module should be structed & shared
-
-
-Module Scope :
-
-    Each loaded module in the node.js wrapped with IIFE that provides a private scope.
-
-
-
-common JS : 
-
-    each file treated as a module.
-    variables , functions , classes are not accessible by defalut using module.export or export 
-    To import using require()
-
-ES modules:
-    export default add 
 
 
 
 
+common JS                                      |                 Es Module
 
 
-section : modules , types of modules , local modules , common js , module scope (iife) , module cashing , import and export both common js modules and also ES modules .
+require('express')                                     import {express } from 'express'
 
-
-
-Bulit-in modules : path , events , fs , stream , http.
-
+module.exports                                         export

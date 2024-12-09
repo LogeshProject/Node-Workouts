@@ -1,32 +1,25 @@
-
-const fsPromises = require('fs').promises
+const fspromise = require('fs').promises ;
 
 const path = require('path')
 
 
 const operation = async ()=>{
 
-    try{
+    const data = await fspromise.readFile(path.join(__dirname , 'files' , 'start.txt') , 'utf-8');
 
-        const data = await fsPromises.readFile(path.join(__dirname,'files','listen.txt'),'utf8')
+    console.log(data)
 
-        console.log(data)
+    fspromise.writeFile(path.join(__dirname , 'files' , 'end.txt' ) , 'Written on end file')
+    console.log('file written .....')
 
-        await fsPromises.writeFile(path.join(__dirname,'files','start.txt'),'Hi hello javascript.')
-        console.log("Write Completed...")
+    fspromise.appendFile(path.join(__dirname , 'files' , 'end.txt') , '\n Append write completed...')
+    console.log('Append file....')
 
-        await fsPromises.appendFile(path.join(__dirname,'files','end.txt'),'\nHi i am Logesh.')
-        console.log("Append Completed...")
+    fspromise.rename(path.join(__dirname , 'files' , 'demo.txt') , path.join(__dirname , 'files' , 'sample.txt'))
+    console.log('renamed file')
 
-        await fsPromises.rename(path.join(__dirname,'files','auto.txt'),path.join(__dirname,'files','bike.txt'))
-        console.log("Rename Completed...")
-
-        await fsPromises.unlink(path.join(__dirname,'files','start.txt'))
-        console.log("Deleted Completed...")
-
-    }catch(err){
-        console.error(err)
-    }
+    fspromise.unlink(path.join(__dirname , 'files' , 'delete.txt'))
+    console.log('file deleted ')
 }
 
 operation()

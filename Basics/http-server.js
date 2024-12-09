@@ -1,20 +1,18 @@
-const http = require('http')
+const http =  require('http')
 
-const port  = 3000 ;
+const port = 3000 ;
 
-const server = http.createServer((req, res)=>{
-
-    res.statusCode = 200
+const server = http.createServer((req , res)=>{
 
     if(req.url === '/'){
-        res.end('Home Page')
+        res.end('Hello world...')
     }else{
         res.statusCode = 404
-        res.end('404 not found ')
+        res.end('404-Not found')
     }
 })
 
 
 server.listen(port , ()=>{
-    console.log('server running on port')
+    console.log('Server Running on 3000')
 })

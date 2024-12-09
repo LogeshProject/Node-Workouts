@@ -1,31 +1,34 @@
-const express = require('express')
+const express = require('express');
 
 const app = express()
 
 const port = 3000 ;
 
+// query 
 
-// Query 
+// app.get('/home' , (req ,res)=>{
 
-// app.get('/home' , (req,res)=>{
-
-//     const a = parseInt(req.query.a) ;
-//     const b = parseInt(req.query.b) ;
+//     let a = parseInt(req.query.a) ;
+//     let b = parseInt(req.query.b) ;
+   
 
 //     res.json(a+b)
+
 // })
 
 
 
-app.get('/home/:id' , (req, res)=>{
 
-    const a = req.params.id
+// params 
 
-    res.json(a)
+
+app.get('/home/:id' , (req ,res)=>{
+
+    let a = req.params.id ;
+
+    res.send(a)
 })
 
-
-
 app.listen(port , ()=>{
-    console.log('Running on 3000')
+    console.log(`server running on http://localhost:${port}`)
 })

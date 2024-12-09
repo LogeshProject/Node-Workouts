@@ -4,11 +4,6 @@ const app = express()
 
 const port = 3003 ;
 
-const myMiddleware = (req , res , next)=>{
-
-    console.log('middleware called....');
-    next()
-}
 
 app.get('/' , (req , res)=>{
 
@@ -16,7 +11,11 @@ app.get('/' , (req , res)=>{
 })
 
 
-app.use(myMiddleware);
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+  });
+  
 
 app.listen(port , ()=>{
     console.log('server on running 3003')

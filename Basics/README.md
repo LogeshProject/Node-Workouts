@@ -22,7 +22,7 @@ V8 engine => highly optimized for excuting js code, by using JIT compliation whi
 
 
 libuv :
-    what : open source library, cross platform library written by c 
+    what : open source library, cross platform library written by c++
     why :  because handle async non-blocking operation in node.js
     how : Thread pool , Event loop
 

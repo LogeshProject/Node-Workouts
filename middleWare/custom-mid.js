@@ -2,9 +2,9 @@ const express = require('express');
 
 const app = express()
 
-const port = 3003 ;
+const port = 3000 ;
 
-const myMiddleware = (req , res , next)=>{
+const myMiddleware = (err , req , res , next)=>{
 
     console.log('middleware called....');
     next()

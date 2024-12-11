@@ -16,7 +16,7 @@ streams :
     ReadStream :  createReadStream ,
     WriteStream : createWriteStreams , 
     DuplexStream : A Duplex stream is a stream that is both readable and writable,
-    TransformStream : A Transform stream is a special type of Duplex stream. Exta done compression
+    TransformStream : A Transform stream is a special type of Duplex stream. Exta done compression , encryption
 
 http :
     createServer with text/plain , text/html , application/json , text/html - template using fs 

@@ -15,7 +15,6 @@ app.get('/' , (req , res)=>{
     res.send("Hello world.....")
 })
 
-
 app.use(myMiddleware);
 
 app.listen(port , ()=>{

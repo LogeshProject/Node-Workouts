@@ -16,5 +16,5 @@ router.get('/profile', (req, res) => {
 app.use('/', router); 
 
 app.listen(port , ()=>{
-    console.log('server running on 3003')
+    console.log(`server running on :${port}`)
 })
